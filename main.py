@@ -1,1 +1,2 @@
-print('hello world')
+word = input('Type a Word: ')
+print(word)
