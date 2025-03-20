@@ -8,6 +8,8 @@ Author:
     # ------------------------------------------------------- HEADER ------------------------------------------------------- #
 """
 
+notes = []  # Notes multidimensional list
+
 # Importing nessesary modules
 
 # Notes multidimensional list
@@ -15,3 +17,9 @@ Author:
 # Add_Note function
 # Purpose: To add a note to the notes multidimensional list
 # Description: Adds a note to the notes multidimensional list
+
+def add_note(content):
+    # Add_Note function
+    # Purpose: To add a note to the notes multidimensional list
+    notes.append([content])
+
