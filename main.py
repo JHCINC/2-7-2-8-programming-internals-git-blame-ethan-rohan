@@ -1,2 +1,1 @@
-word = input('Type a Word: ')
-print(word)
+#File currently for tui purposes.
