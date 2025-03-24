@@ -1,25 +1,15 @@
-"""
-Purpose: Module to manage the notes for the user
-Description: Contains functions to be able to manage the notes through main.py. 
-Author:
-"""
-
-"""
-    # ------------------------------------------------------- HEADER ------------------------------------------------------- #
-"""
-
-notes = []  # Notes multidimensional list
-
-# Importing nessesary modules
-
-# Notes multidimensional list
-
-# Add_Note function
-# Purpose: To add a note to the notes multidimensional list
-# Description: Adds a note to the notes multidimensional list
-
-def add_note(content):
-    # Add_Note function
-    # Purpose: To add a note to the notes multidimensional list
-    notes.append([content])
+'''
+Notes_Module:
+    -> Note_Operations_List
+    -> Note_Controller
+        -> Fetch_Notes_Operations
+        -> Automatically handle all of the operations, and their related functions
+        -> Init_Note_Operation
+            -> Initiates the specific Operation
+    -> Note_Operations
+        -> Add_Note
+        -> Delete_Note
+        -> Edit_Note
+        -> View_Notes
+'''
 
