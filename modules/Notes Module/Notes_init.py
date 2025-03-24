@@ -13,3 +13,17 @@ Notes_Module:
         -> View_Notes
 '''
 
+'''
+    Operation Name: 
+    Operation Description:
+    Operation Attached Function:
+'''
+# -- External Imports --#
+
+# -- Local Imports --#
+import Notes_Controller
+
+# -- Notes Operations --#
+Notes_Operations_List = []
+
+
