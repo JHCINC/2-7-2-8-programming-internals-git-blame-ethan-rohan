@@ -21,9 +21,9 @@ Notes_Module:
 # -- External Imports --#
 
 # -- Local Imports --#
-import Notes_Controller
+import Operations_Controller
+from Operations_Controller import  Notes_Operations_List
 
 # -- Notes Operations --#
-Notes_Operations_List = []
-
+print(Notes_Operations_List)
 

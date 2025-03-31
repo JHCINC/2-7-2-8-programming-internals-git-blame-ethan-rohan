@@ -1,2 +1,3 @@
 def __init__():
-    return "Add Note Operation"
+    number = 1 * 10
+    return number
