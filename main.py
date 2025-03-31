@@ -1,4 +1,5 @@
 import curses
+import time
 #defines stdscr as initial screen
 stdscr = curses.initscr()
 #defines main using stdscr (Standard Screen)
@@ -12,12 +13,10 @@ def main(stdscr):
     stdscr.getch()
     while True:
         key = stdscr.getch()
-        curses.echo(key)
-        curse.refresh()
-        curse.clear()
-
-    
-    stdscr.addstr(2,0, key)
+        note = curses.echo()
+        if key == ord('+'):
+            curses.wrapper(main)
 #Closes the tui loop (lets the code run)
 if __name__ == "__main__":
     curses.wrapper(main)
+print(note)
