@@ -22,7 +22,7 @@ def main(stdscr):
     #This while loop checks of the "l" key to be pressed and then changes the beginning of the text to HELLO1
     while True:
         #Key = get key press
-        key = stdscr.getch()
+  
         #if inputted key is == l
         if key == ord("1"):
             stdscr.clear()
