@@ -2,6 +2,10 @@
 
 # -- Constants --#
 
+# -- Fetch Notes Operations --#
+def __init__():
+    print("Notes Class init loaded")
+
 # -- Notes Class -- #
 class note:
     # Note Class
@@ -17,7 +21,3 @@ class note:
             note_file.write(f"Title: {self.title}\n")
             note_file.write(f"Creation Date: {self.date}\n")
             note_file.write(f"Content: {self.content}\n")
-
-# -- Fetch Notes Operations --#
-def __init__():
-    print("Notes Class init loaded")

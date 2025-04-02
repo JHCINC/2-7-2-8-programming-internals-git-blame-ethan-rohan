@@ -43,7 +43,7 @@ def fetch_file_init(operation_file_path):
         if hasattr(module, "__init__"):
             return getattr(module, "__init__")
         else:
-            return None
+            print("No __init__ found in file")
     except Exception as error:
         print(f"Error 2: {error}")
         print(f"File Path 2: {operation_file_path}")
@@ -61,6 +61,7 @@ def fetch_note_operations():
     for operation in operations_path.iterdir():
         if operation.is_file() and operation.suffix == suffix:
             # Get the __init__ function from the file
+            print("Operation: ", operation)
             fetch_init = fetch_file_init(operation)
             print(f"Fetch Init: {fetch_init}")
             print(f"Fetch Init Function: {fetch_init()}")
