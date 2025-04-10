@@ -21,10 +21,16 @@ Notes_Module:
 # -- External Imports --#
 
 # -- Local Imports --#
-import Operations_Controller
-from Operations_Controller import  Notes_Operations_List
+from Classes import operations_class
+from Classes import note_class
 
-# -- Notes Operations --#
-print(Notes_Operations_List)
+# -- Constants --#
+operations = []
+
+# -- Operation Classes -- #
+from Classes.operations_class import add_note
+from Classes.operations_class import modify_note
+from Classes.operations_class import delete_note
+
 
 # -- Calling Functions -- #
