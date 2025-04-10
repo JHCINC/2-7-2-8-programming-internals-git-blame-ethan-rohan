@@ -5,9 +5,9 @@ import os
 notes = []
 
 operationsNumber = {
-    "Title": 0,
-    "Content": 1,
-    "Date": 2
+    "title": 0,
+    "content": 1,
+    "date": 2
 }
 
 # -- Fetch Note --#
@@ -41,17 +41,29 @@ class note:
 
     def modify_note(self, contentChanged, contentData):
         # Creates a new file with the note content
-        note = fetchNote(self.title)
+        note_in_list = fetchNote(self.title)
         type = checkContentChanged(contentChanged)
 
+        print(f"Self: {self}")
         print(f"Type: {type}")
         print(f"Content Date: {contentData}")
-        self.contentChanged = contentData
-        note[type] = contentData
-        print(f"Updated Note Content: {note[type]}")
+        if contentChanged == "title":
+            self.title = contentData
+        elif contentChanged == "content":
+            self.content = contentData
+        elif contentChanged == "date":
+            self.date = contentData
+
+        note_in_list[type] = contentData
+        print(f"Updated Note Content (Self): {self.title}")
+        print(f"Updated Note Content (In list): {note_in_list[type]}")
 
     def delete_note(self):
         # Creates a new file with the note content
         note = fetchNote(self.title)
-        del notes[note]
+        note_index = notes.index(note)
+        print("deleting note")
+        # havent tested this 
+        del notes[note_index]
+        
 
