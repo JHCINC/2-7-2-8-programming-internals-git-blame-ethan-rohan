@@ -32,5 +32,4 @@ from Classes.operations_class import add_note
 from Classes.operations_class import modify_note
 from Classes.operations_class import delete_note
 
-
 # -- Calling Functions -- #
