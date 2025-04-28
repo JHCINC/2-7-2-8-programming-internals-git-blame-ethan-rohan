@@ -4,7 +4,7 @@ from tkinter import messagebox
 from tkinter import ttk
 
 main = tk.Tk()
-
+#note window
 box_width = tk.Entry(main, width=50)
 box_width.pack()
 
