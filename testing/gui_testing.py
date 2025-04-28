@@ -4,9 +4,15 @@ from tkinter import messagebox
 from tkinter import ttk
 
 main = tk.Tk()
+box = tk.Tk()
 #note window
-box_width = tk.Entry(main, width=50)
+title_name = tk.Entry(main, width=50)
+print('i work!!')
+title_name.pack()
+#Text Box
+box.title(title_name)
+box_width = tk.Text(box, width=50, height=50)
 box_width.pack()
 
 #Lets the Tk window be created
-main.mainloop()
+box.mainloop()
