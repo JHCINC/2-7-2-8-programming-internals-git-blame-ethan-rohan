@@ -1,5 +1,4 @@
 # -- Internal Imports --#
-import os
 
 # -- Constants --#
 notes = []
