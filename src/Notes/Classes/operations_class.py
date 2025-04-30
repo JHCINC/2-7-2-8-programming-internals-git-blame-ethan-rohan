@@ -36,11 +36,7 @@ def delete_note(noteName):
     print("Delete Note Operation")
     # Create a new note object
     if noteName is str:
-        note = fetch_note(noteName)
+        note = note_class.fetchNote(noteName)
         note_class.delete_note(noteName)
     elif noteName.isclass(noteName):
         noteName.delete_note(noteName.title)
-
-def fetch_note(noteName):
-    # Fetches the note
-    return note_class.fetchNote(noteName)
