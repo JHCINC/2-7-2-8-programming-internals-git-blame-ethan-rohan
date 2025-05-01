@@ -42,12 +42,12 @@ input_title = tk.Entry(box, width=20,bg="white", fg="black")
 label_title = tk.Label(box, text="Name your note here:", width=20,bg="#000099", fg="white")
 
 #Text Box for type the note
-box_width = tk.Text(box,width=140, height=50, bg="white")
+text_box = tk.Text(box,width=140, height=50, bg="white", fg="black")
 
 #Places all the variables for labels, entry and text boxes in the box window using .place()
 input_title.place(x=250,y=25)
 label_title.place(x=225,y=0)
-box_width.place(x=250,y=85)
+text_box.place(x=250,y=85)
 
 
 #Lets the Tk window be created (CLOSES THE LOOP)
