@@ -3,6 +3,8 @@ import shelve
 
 # -- Internal Imports --#
 from Classes.note import note as note_class
+from Modules.checker import check_create_note as create_checker
+from Modules.checker import check_modify_note as modify_checker
 
 # -- Constants --#
 noteTitles = []
@@ -22,6 +24,7 @@ def save_note(object, org="No"):
         del noteTitles[original]
 
     noteTitles.append(object.title)
+    print(f"Note Titles: {noteTitles}")
 
 def fetch_note(objectTitle):
     with shelve.open("notes") as notes:
@@ -33,26 +36,30 @@ def fetch_note(objectTitle):
         return requestedObject
 
 # -- Importable functions -- #
-def create_new_note(title, content, date):
-    print(f"Created new note: {title}")
-    note_object = note_class(title, content, date)
-    save_note(note_object)
-    return note_object
+def create_new_note(title: str, content: str, date: str):
+    if create_checker(title, content, date):
+        print(f"Created new note: {title}")
+        note_object = note_class(title, content, date)
+        save_note(note_object)
+        return note_object
 
 def modify_note(object_title, contentChanged, contentData):
-    print(f"Modifying note: {object_title}")
-    object = fetch_note(object_title)
-    object.modify(contentChanged, contentData)
+    if modify_checker(object_title, contentChanged, contentData):
+        print(f"Modifying note: {object_title}")
+        object = fetch_note(object_title)
+        object.modify(contentChanged, contentData)
 
-    save_note(object, object_title)
-    return object
+        save_note(object, object_title)
+        return object
 
 def delete_note(object_title):
     object = fetch_note(object_title)
     object.delete()
 
-    object_in_list_index = noteTitles.index(object_title)
-    del noteTitles[object_in_list_index]
+    if object_title in noteTitles:
+        object_in_list_index = noteTitles.index(object_title)
+        del noteTitles[object_in_list_index]
+        raise ValueError(f"{object_title} was not found in the list.")
 
 def fetch_all_notes():
     with shelve.open("notes") as notes:
