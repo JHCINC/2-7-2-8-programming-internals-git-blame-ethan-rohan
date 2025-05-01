@@ -1,7 +1,7 @@
 #---------TK IMPORTS---------
 import tkinter as tk
 from tkinter import *
-#---------FUCTION IMPORTS---------
+#---------FUNCTION IMPORTS---------
 
 from src.Notes.Classes import note_class
 
