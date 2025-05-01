@@ -1,49 +1,57 @@
-import curses
-import datetime
-#defines stdscr as initial screen
-stdscr = curses.initscr()
-#defines main using stdscr (Standard Screen)
-def main(stdscr):
-    curses.init_pair(1,curses.COLOR_BLACK, curses.COLOR_BLACK)
-    curses.init_pair(2,curses.COLOR_BLACK, curses.COLOR_GREEN)
-    curses.init_pair(3,curses.COLOR_GREEN, curses.COLOR_BLACK)
-    curses.init_pair(4,curses.COLOR_BLUE, curses.COLOR_BLACK)
-    curses.init_pair(5,curses.COLOR_YELLOW, curses.COLOR_BLACK)
-    curses.init_pair(6,curses.COLOR_RED, curses.COLOR_BLACK)
-    #clears the terminal
-    stdscr.clear()
-    #adds the Hello World string to the terminal
-    stdscr.addstr(0,0, "Thank You for using this Note Taking App!", curses.color_pair(1))
-    stdscr.addstr(2,0, "Press the [1] to see the commands.", curses.color_pair(3)) 
-    while True:
-        key = stdscr.getch()
+#---------TK IMPORTS---------
+import tkinter as tk
+from tkinter import *
+#---------FUCTION IMPORTS---------
 
-        if key == ord("1"):
-            stdscr.clear()
-            stdscr.addstr(0,0, "Here are the Commands:")
-            stdscr.addstr(7,0, f"{datetime.datetime.now().replace(second=0, microsecond=0)}", curses.color_pair(5))
-            stdscr.addstr(2,0, "Press [+] to Add a Note", curses.color_pair(6))
-            stdscr.addstr(3,0, "Press [-] to Delete a Note", curses.color_pair(4))
-            stdscr.addstr(5,0, "Press the [2] to go back to the main menu!", curses.color_pair(3))   
-        elif key == ord("2"):
-            stdscr.clear()
-            stdscr.addstr(0,0, "Thank You for using this Note Taking App! ", curses.color_pair(1))
-            stdscr.addstr(2,0, "Press the [1] to see the commands.", curses.color_pair(3))   
-            #Refreshes everthing
-            stdscr.refresh()
-        elif key == ord('+'):
-            stdscr.clear()
-            stdscr.addstr(0,0, "Press [-] to Delete a Note", curses.color_pair(4))
-            stdscr.addstr(1,0, "TYPE HERE: ", curses.color_pair(1))
-            curses.echo()
-        elif key == ord('-'):
-            curses.endwin()
-            stdscr.clear()
-            curses.echo()
-            stdscr.addstr(0,0,"Window Closed!", curses.color_pair(6))
-        else:
-            #If 1 is not pressed then pass (Does Nothing)
-            pass
-#Closes the tui loop (lets the code run)
-if __name__ == "__main__":
-    curses.wrapper(main)
+from src.Notes.Classes import note_class
+
+#---------MENU CONFIG---------
+#This creates the main window/defines box for all gui elements.
+box = tk.Tk()
+#This defines the menu bar, Menu(box) means that the menu is in the box window.
+menu = Menu(box)
+box.config(menu=menu)
+#Defines File as Menu(menu)
+File = Menu(menu)
+#Add cascade adds a menu tab, this tab is labeled as "File"
+menu.add_cascade(label='File', menu=File)
+
+#Submenu to File tab
+#add_command adds a button under the File tab, An example of this is the New button for creating a new file
+File.add_command(label='New')
+File.add_command(label='Save')
+File.add_command(label='Rename')
+File.add_command(label='Open')
+File.add_separator()
+File.add_command(label="Close", command=box.quit)
+
+#Defines Help as Menu(menu)
+Help = Menu(menu)
+#Add cascade adds a menu tab, this tab is labeled as "Help"
+menu.add_cascade(label='Help', menu=Help)
+Help.add_command(label='Source', command=)
+
+#---------MAIN CONFIG---------
+
+#Window setup for the note app
+#Background color
+box.config(bg="#000099")
+#Title of the window that being "Note"
+box.title("Note")
+#Size of the window (Length & Width)
+box.geometry("200x150")
+#State of the window when created (Zoomed = Full Screen)
+box.state("zoomed")
+
+
+#----------CODE FOR VARIABLES---------
+
+#Text Box for type the note
+text_box = tk.Text(box,width=140, height=50, bg="white", fg="black")
+
+#Places all the variables in the box window using .place() e.g. labels, entry and text boxes 
+text_box.place(x=250,y=85)
+
+#Lets the Tk window be created (CLOSES THE LOOP)
+box.mainloop()
+
