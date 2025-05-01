@@ -1,12 +1,3 @@
-# -- Basic Documentation -- #
-'''
-Save_Note(self, list) - Saves a note to a specific list,
-modify_note(self, contentChanged, contentData) - Modify an element in the note
-delete_note(self, , list) - Deletes the object instance
-'''
-
-# -- Internal Imports --#
-
 # -- Notes Class -- #
 class note:
     # Note Class
@@ -19,9 +10,12 @@ class note:
     def modify(self, contentChanged, contentData):
         # Creates a new file with the note content
         if contentChanged == "title":
+            # Changes the content if the contentChanged is 'title'
             self.title = contentData
         elif contentChanged == "content":
+            # Changes the content if the contentChanged is 'content'
             self.content = contentData
 
     def delete(self):
+        # Deletes the note object
         del self
