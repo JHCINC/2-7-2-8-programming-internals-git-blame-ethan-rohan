@@ -3,7 +3,6 @@ import tkinter as tk
 from tkinter import *
 #---------FUNCTION IMPORTS---------
 
-from src.Notes.Classes import note_class
 
 #---------MENU CONFIG---------
 #This creates the main window/defines box for all gui elements.
@@ -18,7 +17,7 @@ menu.add_cascade(label='File', menu=File)
 
 #Submenu to File tab
 #add_command adds a button under the File tab, An example of this is the New button for creating a new file
-File.add_command(label='New')
+File.add_command(label='New', command=operations_class.add_note)
 File.add_command(label='Save')
 File.add_command(label='Rename')
 File.add_command(label='Open')
@@ -29,7 +28,7 @@ File.add_command(label="Close", command=box.quit)
 Help = Menu(menu)
 #Add cascade adds a menu tab, this tab is labeled as "Help"
 menu.add_cascade(label='Help', menu=Help)
-Help.add_command(label='Source', command=)
+Help.add_command(label='Source',)
 
 #---------MAIN CONFIG---------
 

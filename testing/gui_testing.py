@@ -29,7 +29,7 @@ File.add_command(label="Close", command=box.quit)
 Help = Menu(menu)
 #Add cascade adds a menu tab, this tab is labeled as "Help"
 menu.add_cascade(label='Help', menu=Help)
-Help.add_command(label='Source', command=)
+Help.add_command(label='Source')
 
 #---------MAIN CONFIG---------
 
