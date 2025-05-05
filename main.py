@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import *
 #---------FUNCTION IMPORTS---------
 
-from src.Notes import Notes_init
+from src.Notes import __init__ as Notes_init
 
 #---------MENU CONFIG---------
 #This creates the main window/defines box for all gui elements.
