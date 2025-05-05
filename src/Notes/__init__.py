@@ -1,9 +1,9 @@
-# -- External Imports -- #
 """
 This import is used to import the shelve module.
 
 Which is used to store the notes.
 """
+# -- External Imports -- #
 import shelve
 
 # -- Internal Imports --#

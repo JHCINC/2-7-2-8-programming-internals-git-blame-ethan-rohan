@@ -1,3 +1,6 @@
+"""
+This is used as the notes class.
+"""
 # -- Notes Class -- #
 class note:
     # Note Class
