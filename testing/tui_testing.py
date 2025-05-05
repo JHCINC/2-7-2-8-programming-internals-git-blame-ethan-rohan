@@ -16,7 +16,7 @@ def main(stdscr):
     #The two numbers represent the y and x values of the text (0,0 == y,x)
     stdscr.addstr(0,0, "Hello, This is the testing document for this note taking app! ", curses.color_pair(1))
     stdscr.addstr(2,0, "Press the [1] to see the commands!", curses.color_pair(3))   
-    #Refreshes everthing
+    #Refreshes everything
     stdscr.refresh()
     #This while loop checks of the "l" key to be pressed and then changes the beginning of the text to HELLO1
     while True:
