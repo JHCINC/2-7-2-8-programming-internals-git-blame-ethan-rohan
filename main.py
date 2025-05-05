@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import *
 #---------FUNCTION IMPORTS---------
 
+from src.Notes import Notes_init
 
 #---------MENU CONFIG---------
 #This creates the main window/defines box for all gui elements.
@@ -17,7 +18,8 @@ menu.add_cascade(label='File', menu=File)
 
 #Submenu to File tab
 #add_command adds a button under the File tab, An example of this is the New button for creating a new file
-File.add_command(label='New', command=operations_class.add_note)
+#command=Notes.init
+File.add_command(label='New', command=Notes_init.add_note)
 File.add_command(label='Save')
 File.add_command(label='Rename')
 File.add_command(label='Open')
@@ -53,3 +55,4 @@ text_box.place(x=250,y=85)
 
 #Lets the Tk window be created (CLOSES THE LOOP)
 box.mainloop()
+
