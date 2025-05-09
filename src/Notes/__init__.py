@@ -7,7 +7,7 @@ Which is used to store the notes.
 import shelve
 
 # -- Internal Imports --#
-from Classes.note import Note as note_class
+from note_class import Note as note_class
 from Modules.checker import check_create_note as create_checker
 from Modules.checker import check_modify_note as modify_checker
 

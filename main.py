@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import *
 #---------FUNCTION IMPORTS---------
 
-from src.Notes import __init__ as Notes_init
+from src.Notes.__init__ import Notes_init
 
 #---------MENU CONFIG---------
 #This creates the main window/defines box for all gui elements.
@@ -30,7 +30,7 @@ File.add_command(label="Close", command=box.quit)
 Help = Menu(menu)
 #Add cascade adds a menu tab, this tab is labeled as "Help"
 menu.add_cascade(label='Help', menu=Help)
-Help.add_command(label='Source',)
+Help.add_command(label='Source',)  
 
 #---------MAIN CONFIG---------
 
